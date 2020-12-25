@@ -1,0 +1,20 @@
+version: "3.3"
+
+services:
+  electron-react:
+    container_name: electron-react
+    tty: true
+    build:
+      context: ./Docker
+      args:
+        USER_NAME: ${USER_NAME}
+        USER_ID: ${USER_ID}
+    ports:
+      - 3000:3000
+    volumes:
+      - ./electron:/home/${USER_NAME}/app
+    privileged: true
+    environment:
+      - DISPLAY=$DISPLAY
+      - ELECTRON_ENABLE_LOGGING=true
+    network_mode: host
