@@ -6,13 +6,13 @@ The package includes a development environment for creating and building applica
 
 ## Package can be run on:
 
-- [x] debian
+- [x] linux
 - [ ] windows (not tested)
 - [ ] mac (not tested)
 
 ## Projects can be build for:
 
-- [x] debian
+- [x] linux
 - [x] windows
 - [ ] mac
 
