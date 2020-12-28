@@ -31,17 +31,23 @@ sudo chmod +x install.sh
 sudo chmod +x run.sh
 ```
 
+## .env
+
+`USER_NAME` [required] - your user name account
+
+`USER_ID` [required] - your user uid (you can check this in console with `echo $UID`)
+
+`NODE_VERSION` [optional] - release node version
+
+`CONTAINER_NAME` [optional] - docker container name
+
+`APP_FOLDER_NAME` [optional] - if you want to change default `app` folder name, you might need to set this env
+
 ## Installation process
 
 1. Create Your own repo by using this template feature on github or manually by downloading repo.
-1. Create .env file using .env.example and fill it with your username and uid. You can also set `NODE_VERSION` but its optional.
+1. Create .env file using .env.example.
 1. Inside project root directory run `sudo ./install.sh` and thats it.
-
-## Starting container
-
-```
-sudo docker-compose up -d
-```
 
 ## Commands
 

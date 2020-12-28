@@ -1,10 +1,12 @@
 #!/bin/sh
 
+export $(cat .env | xargs)
+
 ACTION=$1
 
 Start () {
     docker-compose up -d
-    docker exec -it electron-react npm start
+    docker exec -it $CONTAINER_NAME npm start
 }
 
 Stop () {
@@ -13,13 +15,13 @@ Stop () {
 
 BuildLinux () {
     docker-compose up -d
-    docker exec -it electron-react npm run build-linux
+    docker exec -it $CONTAINER_NAME npm run build-linux
     docker-compose stop
 }
 
 BuildWin () {
     docker-compose up -d
-    docker exec -it electron-react npm run build-win
+    docker exec -it $CONTAINER_NAME npm run build-win
     docker-compose stop
 }
 

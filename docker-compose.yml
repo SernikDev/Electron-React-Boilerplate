@@ -1,8 +1,8 @@
 version: "3.3"
 
 services:
-  electron-react:
-    container_name: electron-react
+  app:
+    container_name: ${CONTAINER_NAME}
     tty: true
     build:
       context: ./Docker
@@ -10,10 +10,9 @@ services:
         USER_NAME: ${USER_NAME}
         USER_ID: ${USER_ID}
         NODE_VERSION: ${NODE_VERSION}
-    ports:
-      - 3000:3000
+        APP_FOLDER_NAME: ${APP_FOLDER_NAME}
     volumes:
-      - ./electron:/home/${USER_NAME}/app
+      - ./${APP_FOLDER_NAME}:/home/${USER_NAME}/${APP_FOLDER_NAME}
     privileged: true
     environment:
       - DISPLAY=$DISPLAY
