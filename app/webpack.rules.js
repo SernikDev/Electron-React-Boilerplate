@@ -15,29 +15,13 @@ module.exports = [
     },
   },
   {
-    test: /\.(js|jsx)$/,
-    exclude: /node_modules/,
+    test: /\.tsx?$/,
+    exclude: /(node_modules|\.webpack)/,
     use: {
-      loader: "babel-loader"
-    },
-    resolve: {
-      extensions: ['.js', '.jsx']
+      loader: 'ts-loader',
+      options: {
+        transpileOnly: true
+      }
     }
   },
-  // Put your webpack loader rules in this array.  This is where you would put
-  // your ts-loader configuration for instance:
-  /**
-   * Typescript Example:
-   *
-   * {
-   *   test: /\.tsx?$/,
-   *   exclude: /(node_modules|.webpack)/,
-   *   loaders: [{
-   *     loader: 'ts-loader',
-   *     options: {
-   *       transpileOnly: true
-   *     }
-   *   }]
-   * }
-   */
 ];
